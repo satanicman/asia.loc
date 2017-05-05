@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="ru"> <!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="">
+	<title>Document</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/libs.min.css">
+
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	
+	<header class="header">
+		<div class="top-line">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-5 col-sm-7 col-8">
+						<span class="top-line__phone">8 0800 000 000 (Звонки бесплатные по всей Украине)</span>
+					</div>
+					<div class="col-md-4 col-sm-5 col-4">
+						<span class="top-line__balance">Баланс 12 000 грн.</span>
+					</div>
+					<div class="col-md-2 col-sm-6 col-6 login">
+						<a href="#" class="login__btn">Регистрация</a>
+					</div>
+					<div class="col-md-1 col-sm-6 col-6 login">
+						<a href="#" class="login__btn">Вход</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="header__content">
+			<div class="container">
+				<div class="row">
+					<div class="header__logo col-md-3 col-sm-12 col-12">
+						<a href="index.html">
+							<img class="header__logo_img" src="img/asia360logo.png" alt="logo">
+						</a>
+					</div>
+					<div class="header__search col-md-6 col-sm-9 col-9">
+						<form class="header__search_form" action="#">
+							<input class="header__search_form-control" type="text" placeholder="Поиск по запчастям...">
+							<button class="header__search-btn"></button>
+						</form>
+						<span class="example">(Пример: b13007)</span>
+					</div>
+					<div class="col-md-3 col-sm-3 col-3">
+						<div class="cart">
+							<a href="#" class="cart__block">
+								<img src="img/shopping-basket-icon.png" alt="" class="cart__block-img">
+								<div class="cart__block-numb">1</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="header__nav">
+			<div class="container">
+				<div class="row">
+					<ul class="header__nav-list col-md-12">
+						<li class="header__nav-item"><a href="index.html" class="header__nav-link">Главная</a></li>
+						<li class="header__nav-item"><a href="#" class="header__nav-link">О нас</a></li>
+						<li class="header__nav-item"><a href="#" class="header__nav-link">Меню</a></li>
+						<li class="header__nav-item"><a href="#" class="header__nav-link">Оплата</a></li>
+						<li class="header__nav-item"><a href="#" class="header__nav-link">Доставка</a></li>
+						<li class="header__nav-item"><a href="#" class="header__nav-link">Контакты</a></li>
+						<li class="header__nav-item"><a href="#" class="header__nav-link">Подбор</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	
+	<section class="menu">
+		<div class="menu__nav">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3">
+						<ul>
+							<li><a href="#">Главная /</a></li>
+							<li><a href="#">Каталог /</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>	
+		</div>
+		<div class="menu__catalog">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="menu__catalog-links">
+							<ul>
+								<li><a href="#">Товары</a></li>
+								<li><a href="#">Поиск по номеру</a></li>
+								<li><a href="#">Поиск по размеру</a></li>
+								<li><a href="#">Запрос по vin</a></li>
+								<li><a href="#">Масла</a></li>
+								<li><a href="#">Бренды</a></li>
+								<li><a href="#">Последние поступления</a></li>
+							</ul>
+						</div>	
+					</div>	
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="catalog">
+		<div class="block-90-offset-005">
+  <table>
+    <thead>
+      <tr>
+        <th>Изображение</th>
+        <th><span class="arrows">Название</span></th>
+        <th>Номер</th>
+		    <th>Фирма</th>
+        <th>Примечание</th>
+        <th><span class="arrows-1">Цена<br> розница</span></th>
+        <th><span class="arrows-1">Цена<br> отпускная</span></th>
+        <th>Время доставки</th>
+        <th>Количество</th>
+        <th>Покупка</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Изображение"><img src="img/goods.png" alt=""></td>
+        <td data-label="Название">Модуль топл.насоса в сборе с фильтром</td>
+        <td data-label="Номер">68483</td>
+		    <td data-label="Фирма">ASIA360</td>
+        <td data-label="Примечание">L200 (KB8T); Pajero (V88W;V98W); Pajero Sport (KH8W)</td>
+        <td data-label="Цена розница">1018</td>
+        <td data-label="Цена отпускная">1018</td>
+        <td data-label="Время доставки">1-2 дня</td>
+        <td data-label="Количество">12</td>
+        <td class="link" data-label="Покупка"><a href="#catalog-popup" class="popup-content">купить</a></td>
+      </tr>
+      <tr>
+        <td data-label="Изображение"><img src="img/goods.png" alt=""></td>
+        <td data-label="Название">Модуль топл.насоса в сборе с фильтром</td>
+        <td data-label="Номер">68483</td>
+		    <td data-label="Фирма">ASIA360</td>
+        <td data-label="Примечание">L200 (KB8T); Pajero (V88W;V98W); Pajero Sport (KH8W)</td>
+        <td data-label="Цена розница">1018</td>
+        <td data-label="Цена отпускная">1018</td>
+        <td data-label="Время доставки">1-2 дня</td>
+        <td data-label="Количество">12</td>
+        <td class="link" data-label="Покупка"><a href="#catalog-popup" class="popup-content">купить</a></td>
+      </tr>
+      <tr>
+        <td data-label="Изображение"><img src="img/goods.png" alt=""></td>
+        <td data-label="Название">Модуль топл.насоса в сборе с фильтром</td>
+        <td data-label="Номер">68483</td>
+		    <td data-label="Фирма">ASIA360</td>
+        <td data-label="Примечание">L200 (KB8T); Pajero (V88W;V98W); Pajero Sport (KH8W)</td>
+        <td data-label="Цена розница">1018</td>
+        <td data-label="Цена отпускная">1018</td>
+        <td data-label="Время доставки">1-2 дня</td>
+        <td data-label="Количество">12</td>
+        <td class="link" data-label="Покупка"><a href="#catalog-popup" class="popup-content">купить</a></td>
+      </tr>
+      <tr>
+        <td data-label="Изображение"><img src="img/goods.png" alt=""></td>
+        <td data-label="Название">Модуль топл.насоса в сборе с фильтром</td>
+        <td data-label="Номер">68483</td>
+		    <td data-label="Фирма">ASIA360</td>
+        <td data-label="Примечание">L200 (KB8T); Pajero (V88W;V98W); Pajero Sport (KH8W)</td>
+        <td data-label="Цена розница">1018</td>
+        <td data-label="Цена отпускная">1018</td>
+        <td data-label="Время доставки">1-2 дня</td>
+        <td data-label="Количество">12</td>
+        <td class="link" data-label="Покупка"><a href="#catalog-popup" class="popup-content">купить</a></td>
+      </tr>
+      <tr>
+        <td data-label="Изображение"><img src="img/goods.png" alt=""></td>
+        <td data-label="Название">Модуль топл.насоса в сборе с фильтром</td>
+        <td data-label="Номер">68483</td>
+		    <td data-label="Фирма">ASIA360</td>
+        <td data-label="Примечание">L200 (KB8T); Pajero (V88W;V98W); Pajero Sport (KH8W)</td>
+        <td data-label="Цена розница">1018</td>
+        <td data-label="Цена отпускная">1018</td>
+        <td data-label="Время доставки">1-2 дня</td>
+        <td data-label="Количество">12</td>
+        <td class="link" data-label="Покупка"><a href="#catalog-popup" class="popup-content">купить</a></td>
+      </tr>
+      <tr>
+        <td data-label="Изображение"><img src="img/goods.png" alt=""></td>
+        <td data-label="Название">Модуль топл.насоса в сборе с фильтром</td>
+        <td data-label="Номер">68483</td>
+		    <td data-label="Фирма">ASIA360</td>
+        <td data-label="Примечание">L200 (KB8T); Pajero (V88W;V98W); Pajero Sport (KH8W)</td>
+        <td data-label="Цена розница">1018</td>
+        <td data-label="Цена отпускная">1018</td>
+        <td data-label="Время доставки">1-2 дня</td>
+        <td data-label="Количество">12</td>
+        <td class="link" data-label="Покупка"><a href="#catalog-popup" class="popup-content">купить</a></td>
+      </tr>
+      <tr>
+        <td data-label="Изображение"><img src="img/goods.png" alt=""></td>
+        <td data-label="Название">Модуль топл.насоса в сборе с фильтром</td>
+        <td data-label="Номер">68483</td>
+		    <td data-label="Фирма">ASIA360</td>
+        <td data-label="Примечание">L200 (KB8T); Pajero (V88W;V98W); Pajero Sport (KH8W)</td>
+        <td data-label="Цена розница">1018</td>
+        <td data-label="Цена отпускная">1018</td>
+        <td data-label="Время доставки">1-2 дня</td>
+        <td data-label="Количество">12</td>
+        <td class="link" data-label="Покупка"><a href="#catalog-popup" class="popup-content">купить</a></td>
+      </tr>
+      <tr>
+        <td data-label="Изображение"><img src="img/goods.png" alt=""></td>
+        <td data-label="Название">Модуль топл.насоса в сборе с фильтром</td>
+        <td data-label="Номер">68483</td>
+		    <td data-label="Фирма">ASIA360</td>
+        <td data-label="Примечание">L200 (KB8T); Pajero (V88W;V98W); Pajero Sport (KH8W)</td>
+        <td data-label="Цена розница">1018</td>
+        <td data-label="Цена отпускная">1018</td>
+        <td data-label="Время доставки">1-2 дня</td>
+        <td data-label="Количество">12</td>
+        <td class="link" data-label="Покупка"><a href="#catalog-popup" class="popup-content">купить</a></td>
+      </tr>
+      <tr>
+        <td data-label="Изображение"><img src="img/goods.png" alt=""></td>
+        <td data-label="Название">Модуль топл.насоса в сборе с фильтром</td>
+        <td data-label="Номер">68483</td>
+		    <td data-label="Фирма">ASIA360</td>
+        <td data-label="Примечание">L200 (KB8T); Pajero (V88W;V98W); Pajero Sport (KH8W)</td>
+        <td data-label="Цена розница">1018</td>
+        <td data-label="Цена отпускная">1018</td>
+        <td data-label="Время доставки">1-2 дня</td>
+        <td data-label="Количество">12</td>
+        <td class="link" data-label="Покупка"><a href="#catalog-popup" class="popup-content">купить</a></td>
+      </tr>
+      <tr>
+        <td data-label="Изображение"><img src="img/goods.png" alt=""></td>
+        <td data-label="Название">Модуль топл.насоса в сборе с фильтром</td>
+        <td data-label="Номер">68483</td>
+		    <td data-label="Фирма">ASIA360</td>
+        <td data-label="Примечание">L200 (KB8T); Pajero (V88W;V98W); Pajero Sport (KH8W)</td>
+        <td data-label="Цена розница">1018</td>
+        <td data-label="Цена отпускная">1018</td>
+        <td data-label="Время доставки">1-2 дня</td>
+        <td data-label="Количество">12</td>
+        <td class="link" data-label="Покупка"><a href="#catalog-popup" class="popup-content">купить</a></td>
+      </tr>
+      <tr>
+        <td data-label="Изображение"><img src="img/goods.png" alt=""></td>
+        <td data-label="Название">Модуль топл.насоса в сборе с фильтром</td>
+        <td data-label="Номер">68483</td>
+		    <td data-label="Фирма">ASIA360</td>
+        <td data-label="Примечание">L200 (KB8T); Pajero (V88W;V98W); Pajero Sport (KH8W)</td>
+        <td data-label="Цена розница">1018</td>
+        <td data-label="Цена отпускная">1018</td>
+        <td data-label="Время доставки">1-2 дня</td>
+        <td data-label="Количество">12</td>
+        <td class="link" data-label="Покупка"><a href="#catalog-popup" class="popup-content">купить</a></td>
+      </tr>
+      <tr>
+        <td data-label="Изображение"><img src="img/goods.png" alt=""></td>
+        <td data-label="Название">Модуль топл.насоса в сборе с фильтром</td>
+        <td data-label="Номер">68483</td>
+		    <td data-label="Фирма">ASIA360</td>
+        <td data-label="Примечание">L200 (KB8T); Pajero (V88W;V98W); Pajero Sport (KH8W)</td>
+        <td data-label="Цена розница">1018</td>
+        <td data-label="Цена отпускная">1018</td>
+        <td data-label="Время доставки">1-2 дня</td>
+        <td data-label="Количество">12</td>
+        <td class="link" data-label="Покупка"><a href="#catalog-popup" class="popup-content">купить</a></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+		<div id="catalog-popup" class="mfp-hide">
+			<div class="container">
+				<div class="row popup-bg">
+					<div class="col-md-5 col-sm-12 col-10">
+						<div class="catalog-popup__img">
+							<img src="img/popup-1.png" alt="">
+							<button class="zoom__btn zoom-in">+</button>
+							<button class="zoom__btn zoom-out">-</button>	
+						</div>
+					</div>
+					<div class="col-md-7 col-sm-12 col-10">
+						<div class="catalog-popup__info">
+							<h2>Модуль топливного насоса<br>в сборе с фильтром</h2>
+							<div class="catalog-popup__info__price">1500 грн.</div>
+							<div class="catalog-popup__info__presence">(Есть в наличии)</div>
+							<div class="catalog-popup__info__cart-amount">
+								<a href="#" class="cart-amount-minus">-</a>
+								<input type="text" class="cart-amount-text" value="1">
+								<a href="#" class="cart-amount-plus">+</a>
+							</div>
+							<div class="catalog-popup__info__block">
+								<div>	
+									<span>Бренд:</span> Pajero<br>	
+									<span>Срок доставки:</span> 3 дня.<br>
+									<span>Описание:</span> ipsum dolor sit amet, consectetur adipisicing 
+									elit, sed do eiusmod<br> tempor incididunt ut labore et dolore magna aliqua. 
+									Ut enim ad minim veniam, quis<br> nostrud exercitation ullamco laboris nisi 
+									ut aliquip ex ea commodo consequat. 
+								</div>
+							</div>
+							<button class="buy">Купить</button>
+							<button class="order">Заказать в один клик</button>
+						</div>
+					</div>
+					<button class="mfp-close">Закрыть</button>
+				</div>
+			</div>	
+		</div>
+	</section>
+	
+
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 col-sm-5 col-6">
+						<div class="footer__logo">
+							<a href="catalog.html">
+								<img src="img/footer-logo.png" alt="">
+							</a>
+						</div>
+						<div class="footer__socials">
+							<a href="#">
+								<img src="img/fb.png" alt="">
+							</a>
+							<a href="#">
+								<img src="img/tw.png" alt="">
+							</a>
+							<a class="youtube" href="#">
+								<img src="img/youtube.png" alt="">
+							</a>
+							<a class="inst" href="#">
+								<img src="img/inst.png" alt="">
+							</a>
+							<a class="ggl" href="#">
+								<img src="img/google.png" alt="">
+							</a>
+						</div>
+					</div>
+					<div class="col-md-1 col-sm-1 col-1 empty"></div>
+					<div class="col-md-1 col-sm-3 col-2">
+						<div class="footer__nav">
+							<ul>
+								<li><a href="#">Главная</a></li>
+								<li><a href="#">О нас</a></li>
+								<li><a href="#">Меню</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-2 col-sm-3 col-3">
+						<div class="footer__pay">
+							<ul>
+								<li><a href="#">Оплата</a></li>
+								<li><a href="#">Доставка</a></li>
+								<li><a href="#">Подбор</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-2 col-sm-6 col-6">
+						<div class="footer__numbers">
+							<ul>
+								<li>(056) 7360972,</li>
+								<li>(067) 6328219,</li>
+								<li>(066) 0341287,</li>
+								<li>(097) 3638386</li>
+								<li>(050) 5075779</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6 col-6">
+						<div class="footer__address">
+							г.Днепр<br>Проспект Гагарина 97
+						</div>
+					</div>
+				</div>	
+			</div>
+			<div class="footer__btn">
+				<a href="#">
+					<img src="img/angle-double-up.png" alt="">
+				</a>	
+			</div>
+			<div class="footer__asiaavto">Азиа Авто. 2017 &copy; Все права защищены</div>
+	</footer>
+
+	<script src="js/libs.min.js"></script>
+	<script src="js/common.js"></script>
+</body>
+</html>
