@@ -103,29 +103,4 @@
             </div>
         </div>
     </nav>
-    <div class="slider">
-        <div class="sl">
-            <div class="sl__slide">
-                <img src="img/header.jpg" alt="">
-                <div class="sl__slide-text">
-                    <div>Тестовое особое предложение</div>
-                    <a href="@">Подробнее...</a>
-                </div>
-            </div>
-            <div class="sl__slide">
-                <img src="img/header.jpg" alt="">
-                <div class="sl__slide-text">
-                    <div>Тестовое особое предложение</div>
-                    <a href="@">Подробнее...</a>
-                </div>
-            </div>
-            <div class="sl__slide">
-                <img src="img/header.jpg" alt="">
-                <div class="sl__slide-text">
-                    <div>Тестовое особое предложение</div>
-                    <a href="@">Подробнее...</a>
-                </div>
-            </div>
-        </div>
-    </div>
 </header>

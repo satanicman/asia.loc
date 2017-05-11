@@ -1,20 +1,26 @@
-<div id="carousel<?php echo $module; ?>" class="owl-carousel">
-  <?php foreach ($banners as $banner) { ?>
-  <div class="item text-center">
-    <?php if ($banner['link']) { ?>
-    <a href="<?php echo $banner['link']; ?>"><img src="<?php echo $banner['image']; ?>" alt="<?php echo $banner['title']; ?>" class="img-responsive" /></a>
-    <?php } else { ?>
-    <img src="<?php echo $banner['image']; ?>" alt="<?php echo $banner['title']; ?>" class="img-responsive" />
-    <?php } ?>
+</div></div></div>
+<section class="brands">
+  <h2 class="brands__title"><?php echo $text_brands; ?></h2>
+  <div class="line"></div>
+  <div class="brands__table">
+    <div class="container">
+      <div class="row">
+        <?php foreach ($banners as $banner) { ?>
+        <div class="col-md-1 col-sm-1 col-2">
+          <?php if ($banner['link']) { ?>
+          <a href="<?php echo $banner['link']; ?>"><img src="<?php echo $banner['image']; ?>" alt="<?php echo $banner['title']; ?>" class="img-responsive" /></a>
+          <?php } else { ?>
+          <img src="<?php echo $banner['image']; ?>" alt="<?php echo $banner['title']; ?>" class="img-responsive" />
+          <?php } ?>
+        </div>
+        <?php } ?>
+      </div>
+    </div>
   </div>
-  <?php } ?>
-</div>
-<script type="text/javascript"><!--
-$('#carousel<?php echo $module; ?>').owlCarousel({
-	items: 6,
-	autoPlay: 3000,
-	navigation: true,
-	navigationText: ['<i class="fa fa-chevron-left fa-5x"></i>', '<i class="fa fa-chevron-right fa-5x"></i>'],
-	pagination: true
-});
---></script>
+  <div class="brands__btn-wrap">
+    <a class="brands__btn" href="<?php echo $link; ?>"><?php echo $text_all; ?></a>
+  </div>
+</section>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
