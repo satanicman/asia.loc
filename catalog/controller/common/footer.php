@@ -1,6 +1,8 @@
 <?php
 class ControllerCommonFooter extends Controller {
 	public function index() {
+
+		$data['test'] = $this->load->controller('extension/module/socials');
 		$this->load->language('common/footer');
 
 		$data['scripts'] = $this->document->getScripts('footer');

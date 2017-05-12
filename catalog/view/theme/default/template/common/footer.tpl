@@ -1,5 +1,6 @@
 <footer>
   <div class="container">
+    <?php echo $test ?>
     <div class="row">
       <?php if ($informations) { ?>
       <div class="col-sm-3">
