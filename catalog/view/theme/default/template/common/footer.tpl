@@ -1,47 +1,43 @@
-<footer>
+<footer class="footer">
   <div class="container">
-    <?php echo $test ?>
     <div class="row">
-      <?php if ($informations) { ?>
-      <div class="col-sm-3">
-        <h5><?php echo $text_information; ?></h5>
-        <ul class="list-unstyled">
-          <?php foreach ($informations as $information) { ?>
-          <li><a href="<?php echo $information['href']; ?>"><?php echo $information['title']; ?></a></li>
+      <div class="col-md-3 col-sm-5 col-6">
+        <div class="footer__logo">
+          <?php if ($logo) { ?>
+              <a href="<?php echo $base; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>"/></a>
+          <?php } else { ?>
+              <h1><a href="<?php echo $base; ?>"><?php echo $name; ?></a></h1>
           <?php } ?>
-        </ul>
+        </div>
+        <?php echo $socials; ?>
       </div>
-      <?php } ?>
-      <div class="col-sm-3">
-        <h5><?php echo $text_service; ?></h5>
-        <ul class="list-unstyled">
-          <li><a href="<?php echo $contact; ?>"><?php echo $text_contact; ?></a></li>
-          <li><a href="<?php echo $return; ?>"><?php echo $text_return; ?></a></li>
-          <li><a href="<?php echo $sitemap; ?>"><?php echo $text_sitemap; ?></a></li>
-        </ul>
+      <div class="col-md-3 col-sm-6 col-lg-offset-1">
+        <div class="footer__nav">
+          <ul class="clearfix">
+            <?php foreach($informations as $information) : ?>
+                <li class="col-md-6"><a href="<?php echo $information['href']; ?>" title="<?php echo $information['title']; ?>"><?php echo $information['title']; ?></a></li>
+            <?php endforeach; ?>
+          </ul>
+        </div>
       </div>
-      <div class="col-sm-3">
-        <h5><?php echo $text_extra; ?></h5>
-        <ul class="list-unstyled">
-          <li><a href="<?php echo $manufacturer; ?>"><?php echo $text_manufacturer; ?></a></li>
-          <li><a href="<?php echo $voucher; ?>"><?php echo $text_voucher; ?></a></li>
-          <li><a href="<?php echo $affiliate; ?>"><?php echo $text_affiliate; ?></a></li>
-          <li><a href="<?php echo $special; ?>"><?php echo $text_special; ?></a></li>
-        </ul>
+      <div class="col-md-2 col-sm-6 col-6">
+        <div class="footer__numbers">
+            <?php echo $phones; ?>
+        </div>
       </div>
-      <div class="col-sm-3">
-        <h5><?php echo $text_account; ?></h5>
-        <ul class="list-unstyled">
-          <li><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a></li>
-          <li><a href="<?php echo $order; ?>"><?php echo $text_order; ?></a></li>
-          <li><a href="<?php echo $wishlist; ?>"><?php echo $text_wishlist; ?></a></li>
-          <li><a href="<?php echo $newsletter; ?>"><?php echo $text_newsletter; ?></a></li>
-        </ul>
+      <div class="col-md-3 col-sm-6 col-6">
+        <div class="footer__address">
+          <?php echo $address; ?>
+        </div>
       </div>
     </div>
-    <hr>
-    <p><?php echo $powered; ?></p>
   </div>
+  <div class="footer__btn">
+    <a href="#">
+      <img src="<?php echo $base; ?>image/angle-double-up.png" alt="">
+    </a>
+  </div>
+  <div class="footer__asiaavto">Азиа Авто. 2017 &copy; Все права защищены</div>
 </footer>
 
 <!--

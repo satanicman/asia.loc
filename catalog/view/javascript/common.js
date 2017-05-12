@@ -23,6 +23,18 @@ function getURLVar(key) {
 }
 
 $(document).ready(function() {
+	$(window).scroll(function() {
+		if ($(this).scrollTop() > 100) {
+			$('.footer__btn').fadeIn();
+		} else {
+			$('.footer__btn').fadeOut();
+		}
+    });
+
+    $('.footer__btn').click(function() {
+        $("html, body").animate({ scrollTop: 0 }, 600);
+            return false;
+	});
 	// Highlight any found errors
 	$('.text-danger').each(function() {
 		var element = $(this).parent().parent();
