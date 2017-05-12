@@ -48,7 +48,7 @@
               </select>
             </div>
           </div>
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label class="col-sm-2 control-label" for="input-width"><?php echo $entry_width; ?></label>
             <div class="col-sm-10">
               <input type="text" name="width" value="<?php echo $width; ?>" placeholder="<?php echo $entry_width; ?>" id="input-width" class="form-control" />
@@ -65,7 +65,7 @@
               <div class="text-danger"><?php echo $error_height; ?></div>
               <?php } ?>
             </div>
-          </div>
+          </div> -->
           <div class="form-group">
             <label class="col-sm-2 control-label" for="input-status"><?php echo $entry_status; ?></label>
             <div class="col-sm-10">

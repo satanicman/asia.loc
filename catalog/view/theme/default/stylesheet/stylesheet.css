@@ -317,7 +317,6 @@ p {
 	margin-bottom: 22px; }
 
 .sl__slide {
-	height: 460px;
 	position: relative;
 	width: 100%; }
 
@@ -325,36 +324,7 @@ p {
 	display: block;
 	max-width: 100%;
 	height: auto;
-	width: 100%;
-	height: 460px; }
-
-.sl__slide-text {
-	position: absolute;
-	top: 47%;
-	left: 21.5%; }
-.sl__slide-text div {
-	background-color: #f9bc20;
-	background: -webkit-gradient(linear, left top, left bottom, from(#f9bc20), to(#fc7e30));
-	background: -webkit-linear-gradient(top, #f9bc20 0%, #fc7e30 100%);
-	background: linear-gradient(to bottom, #f9bc20 0%, #fc7e30 100%);
-	font-family: 'oswalddemibold';
-	text-transform: uppercase;
-	font-size: 38px;
-	letter-spacing: 1.5px;
-	padding: 8px 14px 7px 13px; }
-.sl__slide-text a {
-	text-decoration: none;
-	color: #fff;
-	font-family: 'oswaldextralight';
-	font-size: 24px;
-	text-transform: uppercase;
-	letter-spacing: 1.6px;
-	display: inline-block;
-	background: #fc842e;
-	background: -webkit-gradient(linear, left top, left bottom, from(#fc842e), to(#fe5c38));
-	background: -webkit-linear-gradient(top, #fc842e 0%, #fe5c38 100%);
-	background: linear-gradient(to bottom, #fc842e 0%, #fe5c38 100%);
-	padding: 0 9px 0 11px; }
+	width: 100%; }
 /* company */
 .company {
 	position: relative;
