@@ -1,10 +1,31 @@
 <?php echo $header; ?>
+<div class="breadcrumbs">
+  <div class="container">
+    <div class="row">
+        <ul class="breadcrumb">
+          <?php foreach ($breadcrumbs as $breadcrumb) { ?>
+          <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
+          <?php } ?>
+        </ul>
+    </div>
+  </div>
+</div>
+<!-- <section class="filter search__filter">
+  <div class="container filter__container">
+    <div class="row">
+      <ul class="filter__list">
+        <li class="filter__item"><a href="#" class="filter__link">Товары</a></li>
+        <li class="filter__item"><a href="#" class="filter__link">Поиск по номеру</a></li>
+        <li class="filter__item"><a href="#" class="filter__link">Поиск по размеру</a></li>
+        <li class="filter__item"><a href="#" class="filter__link">Запрос по vin</a></li>
+        <li class="filter__item"><a href="#" class="filter__link">Масла</a></li>
+        <li class="filter__item"><a href="#" class="filter__link">Бренды</a></li>
+        <li class="filter__item"><a href="#" class="filter__link">Последние поступления</a></li>
+      </ul>
+    </div>
+  </div>
+</section> -->
 <div class="container">
-  <ul class="breadcrumb">
-    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-    <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
-    <?php } ?>
-  </ul>
   <div class="row"><?php echo $column_left; ?>
     <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>
@@ -13,144 +34,50 @@
     <?php } else { ?>
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
-    <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-      <h1><?php echo $heading_title; ?></h1>
-      <label class="control-label" for="input-search"><?php echo $entry_search; ?></label>
-      <div class="row">
-        <div class="col-sm-4">
-          <input type="text" name="search" value="<?php echo $search; ?>" placeholder="<?php echo $text_keyword; ?>" id="input-search" class="form-control" />
-        </div>
-        <div class="col-sm-3">
-          <select name="category_id" class="form-control">
-            <option value="0"><?php echo $text_category; ?></option>
-            <?php foreach ($categories as $category_1) { ?>
-            <?php if ($category_1['category_id'] == $category_id) { ?>
-            <option value="<?php echo $category_1['category_id']; ?>" selected="selected"><?php echo $category_1['name']; ?></option>
-            <?php } else { ?>
-            <option value="<?php echo $category_1['category_id']; ?>"><?php echo $category_1['name']; ?></option>
-            <?php } ?>
-            <?php foreach ($category_1['children'] as $category_2) { ?>
-            <?php if ($category_2['category_id'] == $category_id) { ?>
-            <option value="<?php echo $category_2['category_id']; ?>" selected="selected">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $category_2['name']; ?></option>
-            <?php } else { ?>
-            <option value="<?php echo $category_2['category_id']; ?>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $category_2['name']; ?></option>
-            <?php } ?>
-            <?php foreach ($category_2['children'] as $category_3) { ?>
-            <?php if ($category_3['category_id'] == $category_id) { ?>
-            <option value="<?php echo $category_3['category_id']; ?>" selected="selected">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $category_3['name']; ?></option>
-            <?php } else { ?>
-            <option value="<?php echo $category_3['category_id']; ?>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $category_3['name']; ?></option>
-            <?php } ?>
-            <?php } ?>
-            <?php } ?>
-            <?php } ?>
-          </select>
-        </div>
-        <div class="col-sm-3">
-          <label class="checkbox-inline">
-            <?php if ($sub_category) { ?>
-            <input type="checkbox" name="sub_category" value="1" checked="checked" />
-            <?php } else { ?>
-            <input type="checkbox" name="sub_category" value="1" />
-            <?php } ?>
-            <?php echo $text_sub_category; ?></label>
-        </div>
-      </div>
-      <p>
-        <label class="checkbox-inline">
-          <?php if ($description) { ?>
-          <input type="checkbox" name="description" value="1" id="description" checked="checked" />
-          <?php } else { ?>
-          <input type="checkbox" name="description" value="1" id="description" />
-          <?php } ?>
-          <?php echo $entry_description; ?></label>
-      </p>
-      <input type="button" value="<?php echo $button_search; ?>" id="button-search" class="btn btn-primary" />
+    <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?> $button_search; ?>" id="button-search" class="btn btn-primary" />
       <h2><?php echo $text_search; ?></h2>
       <?php if ($products) { ?>
       <div class="row">
-        <div class="col-md-2 col-sm-6 hidden-xs">
-          <div class="btn-group btn-group-sm">
-            <button type="button" id="list-view" class="btn btn-default" data-toggle="tooltip" title="<?php echo $button_list; ?>"><i class="fa fa-th-list"></i></button>
-            <button type="button" id="grid-view" class="btn btn-default" data-toggle="tooltip" title="<?php echo $button_grid; ?>"><i class="fa fa-th"></i></button>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="form-group">
-            <a href="<?php echo $compare; ?>" id="compare-total" class="btn btn-link"><?php echo $text_compare; ?></a>
-          </div>
-        </div>
-        <div class="col-md-4 col-xs-6">
-          <div class="form-group input-group input-group-sm">
-            <label class="input-group-addon" for="input-sort"><?php echo $text_sort; ?></label>
-            <select id="input-sort" class="form-control" onchange="location = this.value;">
-              <?php foreach ($sorts as $sorts) { ?>
-              <?php if ($sorts['value'] == $sort . '-' . $order) { ?>
-              <option value="<?php echo $sorts['href']; ?>" selected="selected"><?php echo $sorts['text']; ?></option>
-              <?php } else { ?>
-              <option value="<?php echo $sorts['href']; ?>"><?php echo $sorts['text']; ?></option>
-              <?php } ?>
-              <?php } ?>
-            </select>
-          </div>
-        </div>
-        <div class="col-md-3 col-xs-6">
-          <div class="form-group input-group input-group-sm">
-            <label class="input-group-addon" for="input-limit"><?php echo $text_limit; ?></label>
-            <select id="input-limit" class="form-control" onchange="location = this.value;">
-              <?php foreach ($limits as $limits) { ?>
-              <?php if ($limits['value'] == $limit) { ?>
-              <option value="<?php echo $limits['href']; ?>" selected="selected"><?php echo $limits['text']; ?></option>
-              <?php } else { ?>
-              <option value="<?php echo $limits['href']; ?>"><?php echo $limits['text']; ?></option>
-              <?php } ?>
-              <?php } ?>
-            </select>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <?php foreach ($products as $product) { ?>
-        <div class="product-layout product-list col-xs-12">
-          <div class="product-thumb">
-            <div class="image"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" /></a></div>
-            <div>
-              <div class="caption">
-                <h4><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></h4>
-                <p><?php echo $product['description']; ?></p>
-                <?php if ($product['price']) { ?>
-                <p class="price">
-                  <?php if (!$product['special']) { ?>
-                  <?php echo $product['price']; ?>
-                  <?php } else { ?>
-                  <span class="price-new"><?php echo $product['special']; ?></span> <span class="price-old"><?php echo $product['price']; ?></span>
-                  <?php } ?>
-                  <?php if ($product['tax']) { ?>
-                  <span class="price-tax"><?php echo $text_tax; ?> <?php echo $product['tax']; ?></span>
-                  <?php } ?>
-                </p>
+        <section class="catalog">
+          <table class="catalog__table product-table">
+            <thead class="product-table__header product-table-header">
+            <tr>
+              <th class="product-table-header__label product-table__column">Изображение</th>
+              <th class="product-table-header__label product-table__column"><a href="<?php echo $sorts_name['href']; ?>" class="product-table-header__link<?php if($sorts_name['class']) : ?> product-table-header__link_<?php echo $sorts_name['class']; ?><?php endif; ?>">Название</a></th>
+              <th class="product-table-header__label product-table__column">Номер</th>
+              <th class="product-table-header__label product-table__column">Фирма</th>
+              <th class="product-table-header__label product-table__column">Примечание</th>
+              <th class="product-table-header__label product-table__column">Цена розница</th>
+              <!-- <th class="product-table-header__label product-table__column">Цена отпускная</th> -->
+              <!-- <th class="product-table-header__label product-table__column">Время доставки</th> -->
+              <th class="product-table-header__label product-table__column">Количество</th>
+              <th class="product-table-header__label product-table__column">Покупка</th>
+            </tr>
+            </thead>
+            <tbody class="product-table__body">
+            <?php foreach ($products as $product) { ?>
+            <tr>
+              <td data-label="Изображение" class="product-table__column product-table__column_image"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" /></a></td>
+              <td data-label="Название" class="product-table__column product-table__column_name"><a href="<?php echo $product['href']; ?>" class="product-table__link"><?php echo $product['name']; ?></a></td>
+              <td data-label="Номер" class="product-table__column product-table__column_sku"><?php echo $product['sku']; ?></td>
+              <td data-label="Фирма" class="product-table__column product-table__column_manufacturer"><?php echo $product['manufacturer']; ?></td>
+              <td data-label="Примечание" class="product-table__column product-table__column_description"><?php echo $product['description']; ?></td>
+              <td data-label="Цена розница" class="product-table__column product-table__column_price">
+                <?php if (!$product['special']) { ?>
+                <?php echo $product['price']; ?>
+                <?php } else { ?>
+                <span class="price-new"><?php echo $product['special']; ?></span> <span class="price-old"><?php echo $product['price']; ?></span>
                 <?php } ?>
-                <?php if ($product['rating']) { ?>
-                <div class="rating">
-                  <?php for ($i = 1; $i <= 5; $i++) { ?>
-                  <?php if ($product['rating'] < $i) { ?>
-                  <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
-                  <?php } else { ?>
-                  <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-                  <?php } ?>
-                  <?php } ?>
-                </div>
-                <?php } ?>
-              </div>
-              <div class="button-group">
-                <button type="button" onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $button_cart; ?></span></button>
-                <button type="button" data-toggle="tooltip" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-heart"></i></button>
-                <button type="button" data-toggle="tooltip" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-exchange"></i></button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <?php } ?>
+              </td>
+              <!-- <td data-label="Цена отпускная" class="product-table__">--</td> -->
+              <!-- <td data-label="Время доставки">1-2 дня</td> -->
+              <td data-label="Количество" class="product-table__column product-table__column_quantity"><?php echo $product['quantity']; ?></td>
+              <td data-label="Покупка" class="product-table__column product-table__column_buttons"><a href="#" class="product-table__button" onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');return false;"><span><?php echo $button_cart; ?></span></a></td>
+            </tr>
+            <?php } ?>
+            </tbody>
+          </table>
+        </section>
       </div>
       <div class="row">
         <div class="col-sm-6 text-left"><?php echo $pagination; ?></div>

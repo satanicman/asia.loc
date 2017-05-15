@@ -246,7 +246,13 @@ class ControllerProductSearch extends Controller {
 
 				$data['products'][] = array(
 					'product_id'  => $result['product_id'],
-					'thumb'       => $image,
+//                    satanicman
+                    'manufacturer'=> $result['manufacturer'],
+                    'quantity'    => $result['quantity'],
+                    'sku'         => $result['sku'],
+//                    satanicman
+
+                    'thumb'       => $image,
 					'name'        => $result['name'],
 					'description' => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get($this->config->get('config_theme') . '_product_description_length')) . '..',
 					'price'       => $price,
@@ -284,37 +290,56 @@ class ControllerProductSearch extends Controller {
 				$url .= '&limit=' . $this->request->get['limit'];
 			}
 
-			$data['sorts'] = array();
+            if (isset($this->request->get['sort']) && $this->request->get['sort'] == 'pd.name') {
+			    if($this->request->get['order'] == 'ASC') {
+                    $data['sorts_name'] = array(
+                        'href' => $this->url->link('product/search', 'sort=pd.name&order=DESC' . $url),
+                        'class' => 'asc'
+                    );
+                } else {
+                    $data['sorts_name'] = array(
+                        'href' => $this->url->link('product/search', 'sort=pd.name&order=ASC' . $url),
+                        'class' => 'desc'
+                    );
+                }
+            } else {
+                $data['sorts_name'] = array(
+                    'href' => $this->url->link('product/search', 'sort=pd.name&order=ASC' . $url),
+                    'class'=> ''
+                );
+            }
 
-			$data['sorts'][] = array(
-				'text'  => $this->language->get('text_default'),
-				'value' => 'p.sort_order-ASC',
-				'href'  => $this->url->link('product/search', 'sort=p.sort_order&order=ASC' . $url)
-			);
-
-			$data['sorts'][] = array(
-				'text'  => $this->language->get('text_name_asc'),
-				'value' => 'pd.name-ASC',
-				'href'  => $this->url->link('product/search', 'sort=pd.name&order=ASC' . $url)
-			);
-
-			$data['sorts'][] = array(
-				'text'  => $this->language->get('text_name_desc'),
-				'value' => 'pd.name-DESC',
-				'href'  => $this->url->link('product/search', 'sort=pd.name&order=DESC' . $url)
-			);
-
-			$data['sorts'][] = array(
-				'text'  => $this->language->get('text_price_asc'),
-				'value' => 'p.price-ASC',
-				'href'  => $this->url->link('product/search', 'sort=p.price&order=ASC' . $url)
-			);
-
-			$data['sorts'][] = array(
-				'text'  => $this->language->get('text_price_desc'),
-				'value' => 'p.price-DESC',
-				'href'  => $this->url->link('product/search', 'sort=p.price&order=DESC' . $url)
-			);
+//			$data['sorts'] = array();
+//
+//			$data['sorts'][] = array(
+//				'text'  => $this->language->get('text_default'),
+//				'value' => 'p.sort_order-ASC',
+//				'href'  => $this->url->link('product/search', 'sort=p.sort_order&order=ASC' . $url)
+//			);
+//
+//			$data['sorts'][] = array(
+//				'text'  => $this->language->get('text_name_asc'),
+//				'value' => 'pd.name-ASC',
+//				'href'  => $this->url->link('product/search', 'sort=pd.name&order=ASC' . $url)
+//			);
+//
+//			$data['sorts'][] = array(
+//				'text'  => $this->language->get('text_name_desc'),
+//				'value' => 'pd.name-DESC',
+//				'href'  => $this->url->link('product/search', 'sort=pd.name&order=DESC' . $url)
+//			);
+//
+//			$data['sorts'][] = array(
+//				'text'  => $this->language->get('text_price_asc'),
+//				'value' => 'p.price-ASC',
+//				'href'  => $this->url->link('product/search', 'sort=p.price&order=ASC' . $url)
+//			);
+//
+//			$data['sorts'][] = array(
+//				'text'  => $this->language->get('text_price_desc'),
+//				'value' => 'p.price-DESC',
+//				'href'  => $this->url->link('product/search', 'sort=p.price&order=DESC' . $url)
+//			);
 
 			if ($this->config->get('config_review_status')) {
 				$data['sorts'][] = array(

@@ -1,6 +1,6 @@
 <?php
 // Heading
-$_['heading_title']     = 'Поиск';
+$_['heading_title']     = 'Каталог';
 $_['heading_tag']		= 'По тегу - ';
 
 // Text
