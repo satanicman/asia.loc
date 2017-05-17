@@ -1,6 +1,15 @@
 <?php
 class ControllerProductSearch extends Controller {
 	public function index() {
+	    //fancybox
+        $this->document->addStyle('catalog/view/javascript/jquery/fancybox/jquery.fancybox.min.css');
+        $this->document->addScript('catalog/view/javascript/jquery/fancybox/jquery.fancybox.min.js');
+
+        // buyme
+        $this->document->addScript('catalog/view/javascript/jquery/buyme/js/buyme.js');
+
+        $this->document->addScript('catalog/view/javascript/search.js');
+
 		$this->load->language('product/search');
 
 		$this->load->model('catalog/category');
@@ -515,4 +524,68 @@ class ControllerProductSearch extends Controller {
 
 		$this->response->setOutput($this->load->view('product/search', $data));
 	}
+
+	public function get() {
+	    $data['errors'] = array();
+
+        $this->load->language('product/search');
+
+	    if($this->request->get['product_id']) {
+            $this->load->model('catalog/product');
+            $this->load->model('tool/image');
+
+
+            $result = $this->model_catalog_product->getProduct((int)$this->request->get['product_id']);
+
+            if($result) {
+                $data['text_brand'] = $this->language->get('text_brand');
+                $data['text_description'] = $this->language->get('text_description');
+                $data['button_cart'] = $this->language->get('button_cart');
+                $data['button_quick_order'] = $this->language->get('button_quick_order');
+
+                if($result['quantity'] > 0)
+                    $available = $this->language->get('text_available');
+                else
+                    $available = $this->language->get('text_not_available');
+
+                if ($result['image'])
+                    $image = $this->model_tool_image->resize($result['image'], 210, 375);
+                else
+                    $image = $this->model_tool_image->resize('placeholder.png', $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));
+
+                if ($this->customer->isLogged() || !$this->config->get('config_customer_price'))
+                    $price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+                else
+                    $price = false;
+
+                if ((float)$result['special'])
+                    $special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+                else
+                    $special = false;
+
+                $data['product'] = array(
+                    'product_id' => $result['product_id'],
+                    'manufacturer' => $result['manufacturer'],
+                    'quantity' => $result['quantity'],
+                    'sku' => $result['sku'],
+                    'thumb' => $image,
+                    'available' => $available,
+                    'name' => $result['name'],
+                    'description' => html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8'),
+                    'price' => $price,
+                    'special' => $special,
+                    'minimum' => $result['minimum'] > 0 ? $result['minimum'] : 1,
+                    'rating' => $result['rating'],
+                    'href' => $this->url->link('product/product', 'product_id=' . $result['product_id'])
+                );
+            } else {
+                $data['errors'][] = $this->language->get('error_product');
+            }
+        } else {
+	        $data['errors'][] = $this->language->get('error_id');
+        }
+
+
+        $this->response->setOutput($this->load->view('product/ajax', $data));
+    }
 }

@@ -57,8 +57,8 @@
             <tbody class="product-table__body">
             <?php foreach ($products as $product) { ?>
             <tr>
-              <td data-label="Изображение" class="product-table__column product-table__column_image"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" /></a></td>
-              <td data-label="Название" class="product-table__column product-table__column_name"><a href="<?php echo $product['href']; ?>" class="product-table__link"><?php echo $product['name']; ?></a></td>
+              <td data-label="Изображение" class="product-table__column product-table__column_image"><a href="<?php echo $product['href']; ?>" class="product-popup" data-product_id="<?php echo $product['product_id']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" /></a></td>
+              <td data-label="Название" class="product-table__column product-table__column_name"><a href="<?php echo $product['href']; ?>" class="product-table__link product-popup" data-product_id="<?php echo $product['product_id']; ?>"><?php echo $product['name']; ?></a></td>
               <td data-label="Номер" class="product-table__column product-table__column_sku"><?php echo $product['sku']; ?></td>
               <td data-label="Фирма" class="product-table__column product-table__column_manufacturer"><?php echo $product['manufacturer']; ?></td>
               <td data-label="Примечание" class="product-table__column product-table__column_description"><?php echo $product['description']; ?></td>

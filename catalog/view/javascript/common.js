@@ -159,6 +159,7 @@ var cart = {
 				$('#cart > button').button('loading');
 			},
 			complete: function() {
+				$.fancybox.close();
 				$('#cart > button').button('reset');
 			},
 			success: function(json) {
