@@ -133,7 +133,7 @@ body {
 	position: relative;
 	line-height: 1.56;
 	font-family: 'robotoregular', sans-serif;
-	color: #fff; }
+	color: #333; }
 
 h1, h2, h3, h4, h5, h6 {
 	margin-top: 0;
@@ -172,6 +172,7 @@ p {
 .top-line .row {
 	margin: 0; }
 .top-line .top-line__phone {
+	color: #fff;
 	font-family: 'oswalddemibold';
 	font-size: 14px;
 	line-height: 16px;
@@ -181,6 +182,7 @@ p {
 	height: 100%;
 	display: inline-block; }
 .top-line .top-line__balance {
+	color: #fff;
 	text-align: right;
 	padding: 12px 0 12px 21px;
 	display: inline-block;
@@ -642,10 +644,12 @@ p {
   padding-left: 68px; }
 
 .footer__numbers {
+	color: #fff;
   padding: 57px 0 0 57px;
   line-height: 1.8; }
 
 .footer__address {
+	color: #fff;
   line-height: 1.8;
   padding: 57px 0 0 63px; }
 
@@ -1175,6 +1179,7 @@ p {
 	.top-line .top-line__phone {
 		font-size: 13px;
 		padding: 13px 0 11px 9px;
+		color: #fff;
 	}
 	.company__video {
 		padding-left: 0;
